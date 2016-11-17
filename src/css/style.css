@@ -16,7 +16,7 @@
 /*
  * module - BEMのBlock単位のmodule
  */
-
+@import "module/bg";
 
 /*
  * utility - helperなど
