@@ -17,7 +17,10 @@
  * module - BEMのBlock単位のmodule
  */
 @import "module/bg";
+@import "module/frame";
+@import "module/logo";
 
 /*
  * utility - helperなど
  */
+@import "utility/txt";

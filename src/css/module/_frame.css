@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+.frame {
+  height: 489px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  &--s {
+    width: 870px;
+    .frame__bone {
+      width: 494px;
+    }
+  }
+  &--l {
+    width: 1160px;
+    .frame__bone {
+      width: 784px;
+    }
+  }
+  &::before {
+    display: block;
+    content: "";
+    background: url('../img/frame-staff.png') no-repeat;
+    width: 155px;
+    height: 15px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
+  &::after {
+    display: block;
+    content: "";
+    background: url('../img/frame-wars.png') no-repeat;
+    width: 128px;
+    height: 15px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+  }
+  &__bone {
+    background: url('../img/frame-left.png') left no-repeat,
+      url('../img/frame-right.png') right no-repeat;
+    height: 489px;
+    margin: 0 auto;
+  }
+  &__container {
+    width: 400px;
+    margin: 0 auto;
+  }
+}
