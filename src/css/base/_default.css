@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+html {
+  font-size: $font-size-root;
+}
+
 body {
   font-family: $font-family-default;
   font-size: $font-size-base;
@@ -16,6 +20,6 @@ img {
 }
 
 a {
-  /*color: $color-link;*/
+  color: $color-primary;
   text-decoration: none;
 }

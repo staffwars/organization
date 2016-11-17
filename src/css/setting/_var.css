@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+/* font-size */
+$font-size-root: 14px;
+$font-size-base: 1rem;
+
+/* color */
+$color-default: #fff;
+$color-primary: #0ff;
+
+/* bgcolor */
+$bgcolor-default: #000;

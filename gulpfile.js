@@ -256,7 +256,7 @@ gulp.task('bs-reload', function() {
  * watch
  */
 gulp.task('watch', ['browserSync'], function () {
-  gulp.watch(path.html_src + '**/*.{ejs,json}', ['build:html']);
+  gulp.watch(path.src + '*.html', ['build:html']);
   gulp.watch(path.css_src + '**/*.css', ['build:css']);
   gulp.watch(path.js_src + '**/*.js', ['build:js']);
   gulp.watch(path.img_src + '**/*.{png,jpg}', ['build:img']);
