@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+/*
+ * setting - 変数宣言、mixinなど
+ */
+@import "setting/var";
+@import "setting/mixin";
+/*@import "setting/sprite";*/
+
+/*
+ * base - リセット・デフォルトスタイル定義
+ */
+@import "base/reset";
+@import "base/default";
+
+/*
+ * module - BEMのBlock単位のmodule
+ */
+
+
+/*
+ * utility - helperなど
+ */
