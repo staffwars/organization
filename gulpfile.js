@@ -223,7 +223,7 @@ gulp.task('eslint', function () {
  */
 // copy
 gulp.task('copy', function () {
-  return gulp.src(path.img_src + '**/*.{png,jpg}')
+  return gulp.src(path.img_src + '**/*.{png,jpg,ico}')
     .pipe(plumber({
       errorHandler: notify.onError('<%= error.message %>')
     }))
@@ -259,7 +259,7 @@ gulp.task('watch', ['browserSync'], function () {
   gulp.watch(path.src + '*.html', ['build:html']);
   gulp.watch(path.css_src + '**/*.css', ['build:css']);
   gulp.watch(path.js_src + '**/*.js', ['build:js']);
-  gulp.watch(path.img_src + '**/*.{png,jpg}', ['build:img']);
+  gulp.watch(path.img_src + '**/*.{png,jpg,ico}', ['build:img']);
   gulp.watch('gulpfile.js', ['build']);
   gulp.watch(path.src + '**/*', ['bs-reload']);
 });
