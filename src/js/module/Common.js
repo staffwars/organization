@@ -29,7 +29,6 @@ export default class Common {
         this.hiddenSlidePage();
         this.hiddenMakingPage();
         this.hiddenFinishPage();
-
         this.compressFrame();
         this.showIntroPage();
         this.hiddenEl(this.$back);
@@ -50,7 +49,6 @@ export default class Common {
         break;
       case 3:
         this.expandFrame();
-        this.setSlideSize();
         break;
       case 4:
         this.compressFrame();
@@ -59,22 +57,6 @@ export default class Common {
         this.$next.text('TOP');
         break;
       default:
-    }
-  }
-
-  setSlideSize() {
-    const $iframe = $('.speakerdeck-iframe');
-
-    if (this.frameBoneHeight === 244) {
-      $iframe.css({
-        width: '240px',
-        height: '212px'
-      });
-    } else {
-      $iframe.css({
-        width: '470px',
-        height: '414.5px'
-      });
     }
   }
 
