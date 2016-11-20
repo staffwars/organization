@@ -1,0 +1,42 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$arrow-left-accent-name: 'arrow-left-accent';
+$arrow-left-accent-x: 0px;
+$arrow-left-accent-y: 0px;
+$arrow-left-accent-offset-x: 0px;
+$arrow-left-accent-offset-y: 0px;
+$arrow-left-accent-width: 51px;
+$arrow-left-accent-height: 56px;
+$arrow-left-accent-total-width: 106px;
+$arrow-left-accent-total-height: 56px;
+$arrow-left-accent-image: '../img/sprite.png?revision=201611201049';
+$arrow-left-accent: (0px, 0px, 0px, 0px, 51px, 56px, 106px, 56px, '../img/sprite.png?revision=201611201049', 'arrow-left-accent', );
+$arrow-right-accent-name: 'arrow-right-accent';
+$arrow-right-accent-x: 55px;
+$arrow-right-accent-y: 0px;
+$arrow-right-accent-offset-x: -55px;
+$arrow-right-accent-offset-y: 0px;
+$arrow-right-accent-width: 51px;
+$arrow-right-accent-height: 56px;
+$arrow-right-accent-total-width: 106px;
+$arrow-right-accent-total-height: 56px;
+$arrow-right-accent-image: '../img/sprite.png?revision=201611201049';
+$arrow-right-accent: (55px, 0px, -55px, 0px, 51px, 56px, 106px, 56px, '../img/sprite.png?revision=201611201049', 'arrow-right-accent', );
+$spritesheet-width: 106px;
+$spritesheet-height: 56px;
+$spritesheet-image: '../img/sprite.png?revision=201611201049';
+$spritesheet-sprites: ($arrow-left-accent, $arrow-right-accent, );
+$spritesheet: (106px, 56px, '../img/sprite.png?revision=201611201049', $spritesheet-sprites, );
+
+

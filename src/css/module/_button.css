@@ -1,0 +1,117 @@
+@charset "utf-8";
+
+.button {
+  margin: 0 auto;
+  width: 370px;
+  height: 56px;
+  position: relative;
+  &__left {
+    display: block;
+    position: absolute;
+    &--1 {
+      left: 32px;
+      // opacity: .6;
+      animation: button1 2s ease infinite;
+    }
+    &--2 {
+      left: 0;
+      // opacity: .2;
+      animation: button2 2s ease infinite;
+    }
+  }
+  &__right {
+    display: block;
+    position: absolute;
+    &--1 {
+      right: 32px;
+      // opacity: .6;
+      animation: button1 2s ease infinite;
+    }
+    &--2 {
+      right: 0;
+      // opacity: .2;
+      animation: button2 2s ease infinite;
+    }
+  }
+  &__body {
+    width: 184px;
+    height: 100%;
+    color: #000;
+    font-size: $font-size-l;
+    font-weight: bold;
+    display: block;
+    margin: 0 auto;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    &::before, &::after {
+      display: block;
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute;
+      top: 0;
+      border: solid 28px transparent;
+    }
+    &::before {
+      border-right: solid 28px;
+      left: -56px;
+    }
+    &::after {
+      border-left: solid 28px;
+      right: -56px;
+    }
+  }
+  &--accent {
+    .button__body {
+      background-color: $color-accent;
+      &::before{
+        border-right-color: $color-accent;
+      }
+      &::after{
+        border-left-color: $color-accent;
+      }
+    }
+    .button__left {
+      @mixin sprite $arrow-left-accent;
+    }
+    .button__right {
+      @mixin sprite $arrow-right-accent;
+    }
+  }
+  &--primary {
+    .button__body {
+      background-color: $color-primary;
+      &::before{
+        border-right-color: $color-primary;
+      }
+      &::after{
+        border-left-color: $color-primary;
+      }
+    }
+    .button__left {
+      @mixin sprite $arrow-left-primary;
+    }
+    .button__right {
+      @mixin sprite $arrow-right-primary;
+    }
+  }
+}
+
+@keyframes button1 {
+  0% {
+    opacity: 0
+  }
+  100% {
+    opacity: .6
+  }
+}
+
+@keyframes button2 {
+  0% {
+    opacity: 0
+  }
+  100% {
+    opacity: .2
+  }
+}

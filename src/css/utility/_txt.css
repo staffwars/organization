@@ -1,5 +1,9 @@
 @charset "utf-8";
 
-/*.txt-center {
-  text-align: center;
-}*/
+.txt-s { /* 13px */
+  font-size: $font-size-s;
+}
+
+.txt-height-l {
+  line-height: $line-height-l;
+}

@@ -1,12 +1,23 @@
 @charset "utf-8";
 
+/* font-family */
+$font-family-default: Meiryo, "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", Osaka, Arial, Sans-serif;
+
 /* font-size */
 $font-size-root: 14px;
 $font-size-base: 1rem;
+$font-size-xs: 0.85714rem; /* 12px */
+$font-size-s: 0.92857rem; /* 13px */
+$font-size-l: 1.42857rem; /* 20px */
+$font-size-xl: 2.14286rem; /* 30px */
 
 /* color */
 $color-default: #fff;
 $color-primary: #0ff;
+$color-accent: #ff0;
 
 /* bgcolor */
 $bgcolor-default: #000;
+
+/* line-height */
+$line-height-l: 1.7;

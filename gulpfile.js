@@ -82,7 +82,7 @@ gulp.task('sprite', function () {
     timestamp += dtObj[key];
   }
 
-  var spriteData = gulp.src(path.sprite_src + 'sprite/*.png')
+  var spriteData = gulp.src(path.sprite_src + '*.png')
     .pipe(spritesmith({
       imgName: 'sprite.png',
       cssName: '_sprite.css',

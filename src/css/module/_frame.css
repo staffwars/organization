@@ -52,6 +52,21 @@
   }
   &__container {
     width: 400px;
+    height: 489px;
     margin: 0 auto;
+    position: relative;
+  }
+  &__logo {
+    
+  }
+  &__box {
+    position: absolute;
+    top: 58px;
+    width: 100%;
+  }
+  &__button {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
   }
 }
