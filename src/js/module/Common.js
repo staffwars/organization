@@ -13,6 +13,7 @@ export default class Common {
 
   init() {
     this.setPage();
+    this.addResizeEvent();
     this.addClickButtonEvent();
     this.addClickBackEvent();
     this.addClickNextEvent();
@@ -69,7 +70,7 @@ export default class Common {
   scrollToNext() {
     this.$frameBone.animate({
       scrollTop: this.$frameBone.scrollTop() + this.frameBoneHeight
-    }, 800);
+    }, 1000);
   }
 
   addResizeEvent() {

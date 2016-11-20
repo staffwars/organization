@@ -82,6 +82,7 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    overflow: hidden;
   }
   &__logo {
     position: absolute;
