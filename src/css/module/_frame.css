@@ -55,12 +55,16 @@
   &__back {
     position: absolute;
     top: -33px;
-    width: 100%;
+    left: 0;
+    right: 0;
+    width: 35px;
+    margin: auto;
     text-align: center;
     color: $color-primary;
     font-size: $font-size-xs;
     line-height: 1;
     cursor: pointer;
+    z-index: 1;
     &::after {
       @mixin sprite $back;
       display: block;
@@ -70,25 +74,28 @@
   }
   &__next {
     position: absolute;
-    bottom: -26px;
-    width: 100%;
+    bottom: -35px;
+    left: 0;
+    right: 0;
+    width: 35px;
+    margin: auto;
     text-align: center;
     color: $color-primary;
     font-size: $font-size-xs;
     line-height: 1;
     cursor: pointer;
-    &::after {
+    z-index: 1;
+    &::before {
       @mixin sprite $next;
       display: block;
       content: "";
-      margin: -44px auto 0;
+      margin: 0 auto 9px;
     }
   }
   &__bone {
-    /*background: url('../img/frame-left.png') left no-repeat,
-      url('../img/frame-right.png') right no-repeat;*/
     height: 489px;
     margin: 0 auto;
+    overflow: hidden;
   }
   &__container {
     height: 489px;

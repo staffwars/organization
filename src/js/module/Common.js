@@ -6,6 +6,8 @@ export default class Common {
       _this[`$${key}`] = this[key];
     }, elObj);
 
+    this.frameBoneHeight = this.$frameBone.height();
+
     this.pageNum = 1;
   }
 
@@ -17,45 +19,72 @@ export default class Common {
   }
 
   setPage() {
-    if (this.pageNum === 1) {
-      this.hiddenMemberPage();
-      this.hiddenFinishPage();
-      this.showIntroPage();
-      this.hiddenEl(this.$back);
-      this.hiddenEl(this.$next);
-    } else if (this.pageNum === 2) {
-      this.hiddenIntroPage();
-      this.hiddenSlidePage();
-      this.showMemberPage();
-      this.$next.text('NEXT');
-      this.fadeInEl(this.$back);
-      this.fadeInEl(this.$next);
-    } else if (this.pageNum === 3) {
-      this.hiddenMemberPage();
-      this.hiddenMakingPage();
-      this.showSlidePage();
-      this.$next.text('NEXT');
-      this.fadeInEl(this.$back);
-      this.fadeInEl(this.$next);
-    } else if (this.pageNum === 4) {
-      this.hiddenSlidePage();
-      this.hiddenFinishPage();
-      this.showMakingPage();
-      this.$next.text('NEXT');
-      this.fadeInEl(this.$back);
-      this.fadeInEl(this.$next);
-    } else {
-      this.hiddenMakingPage();
-      this.showFinishPage();
-      this.$next.text('TOP');
-      this.fadeInEl(this.$back);
-      this.fadeInEl(this.$next);
+    switch (this.pageNum) {
+      case 1:
+        this.hiddenMemberPage();
+        this.hiddenSlidePage();
+        this.hiddenMakingPage();
+        this.hiddenFinishPage();
+
+        this.compressFrame();
+        this.showIntroPage();
+        this.hiddenEl(this.$back);
+        this.hiddenEl(this.$next);
+        break;
+      case 2:
+        this.hiddenIntroPage();
+        this.expandFrame();
+        this.showMemberPage();
+        this.showSlidePage();
+        this.showMakingPage();
+        this.showFinishPage();
+        this.$next.text('NEXT');
+        setTimeout(() => {
+          this.fadeInEl(this.$back);
+          this.fadeInEl(this.$next);
+        }, 1000);
+        break;
+      case 3:
+        this.expandFrame();
+        this.setSlideSize();
+        break;
+      case 4:
+        this.compressFrame();
+        break;
+      case 5:
+        this.$next.text('TOP');
+        break;
+      default:
     }
+  }
+
+  setSlideSize() {
+    $('.speakerdeck-iframe').css({
+      width: '470px',
+      height: '414.5px'
+    });
+  }
+
+  scrollToBack() {
+    this.$frameBone.animate({
+      scrollTop: this.$frameBone.scrollTop() - this.frameBoneHeight
+    }, 1000);
+  }
+
+  scrollToNext() {
+    this.$frameBone.animate({
+      scrollTop: this.$frameBone.scrollTop() + this.frameBoneHeight
+    }, 800);
   }
 
   addClickBackEvent() {
     this.$back.on('click', () => {
       this.pageNum = this.pageNum - 1;
+
+      if (this.pageNum !== 1) {
+        this.scrollToBack();
+      }
+
       this.setPage();
     });
   }
@@ -66,8 +95,8 @@ export default class Common {
         this.pageNum = 1;
       } else {
         this.pageNum = this.pageNum + 1;
+        this.scrollToNext();
       }
-
       this.setPage();
     });
   }
@@ -80,7 +109,6 @@ export default class Common {
   }
 
   showIntroPage() {
-    this.compressFrame();
     this.fadeInEl(this.$intro);
   }
 
@@ -89,7 +117,6 @@ export default class Common {
   }
 
   showMemberPage() {
-    this.expandFrame();
     this.fadeInEl(this.$member);
   }
 
@@ -98,7 +125,6 @@ export default class Common {
   }
 
   showSlidePage() {
-    this.expandFrame();
     this.fadeInEl(this.$slide);
   }
 
@@ -107,7 +133,6 @@ export default class Common {
   }
 
   showMakingPage() {
-    this.compressFrame();
     this.fadeInEl(this.$making);
   }
 
@@ -116,7 +141,6 @@ export default class Common {
   }
 
   showFinishPage() {
-    this.compressFrame();
     this.fadeInEl(this.$finish);
   }
 

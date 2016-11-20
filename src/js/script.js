@@ -10,7 +10,8 @@ import Common from './module/Common';
     next: $('#js-next'),
     slide: $('#js-slide'),
     making: $('#js-making'),
-    finish: $('#js-finish')
+    finish: $('#js-finish'),
+    frameBone: $('#js-frame-bone')
   };
 
   const common = new Common(elObj);

@@ -5,7 +5,7 @@
     background-color: rgba(0, 255, 255, .4);
     width: 400px;
     height: 120px;
-    margin: 20px 0;
+    margin: 20px auto;
     font−size: $font-size-l;
     display: flex;
     align-items: center;
