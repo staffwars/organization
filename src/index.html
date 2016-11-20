@@ -78,12 +78,12 @@
       <p class="text">全社員早押上司争奪戦推進機関(ぜんしゃいんはやおしじょうしそうだつせんすいしんきかん, 英語：Organization for staff wars)は1989年10月にсёко ма цуму(ショコ・マ・ツムー)[要出典]が創立し、現在まで活動してるとされる機関である。南北解放戦時代には全部下解放戦線と１，２を争う組織であったが、終戦後に主要なメンバーがロウド組合へ移行し組織としては弱体化している。終戦後にはZ14というコードネームにて呼ばれる事がある。なおコードネームのZ14は「早押上司」の文字列が「押上(おしあげ)」と誤読されたことから略式名称を「押上」にしようとしたが、さらなる秘匿性の追求の為、半蔵門線押上駅の表記である「Z14」を使用したという説もある。武力を用いない早押しによる平和的な手法によって上司の時間を確保するといった活動を行っている。</p>
     </div> -->
     <!-- 01,04,05 -->
-    <div class="frame frame--s">
-      <!-- <div class="frame__back">BACK</div>
-      <div class="frame__next">NEXT</div> -->
+    <div id="js-frame" class="frame frame--s">
+      <div id="js-back" class="frame__back is-hidden">BACK</div>
+      <div id="js-next" class="frame__next is-hidden">NEXT</div>
       <div class="frame__bone">
-        <div class="frame__container">
-          <!-- 01 -->
+        <!-- 01 -->
+        <div id="js-intro" class="frame__container is-hidden">
           <div class="frame__logo">
             <h1><img src="img/logo.png" alt="全社員上司早押争奪戦" width="333" height="20"></h1>
           </div>
@@ -94,7 +94,7 @@
               </div>
             </div>
           </div>
-          <div class="frame__button">
+          <div id="js-button" class="frame__button">
             <div class="button button--accent">
               <span class="button__left button__left--1"></span>
               <span class="button__left button__left--2"></span>
@@ -103,9 +103,23 @@
               <button type="button" class="button__body">機密情報</button>
             </div>
           </div>
-          <!-- /01 -->
-          <!-- 04 -->
-          <!-- <div class="frame__headline">
+        </div>
+        <!-- /01 -->
+        <!-- 02 -->
+        <div id="js-member" class="frame__container is-hidden">
+          <img src="img/member.jpg" alt="構成員" width="560" height="420">
+        </div>
+        <!-- 02 -->
+        <!-- 03 -->
+        <div id="js-slide" class="frame__container is-hidden">
+          <div class="frame__slide">
+            <script class="speakerdeck-embed" data-id="93603d04a886432ab0ece708e7a2bde2" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+          </div>
+        </div>
+        <!-- /03 -->
+        <!-- 04 -->
+        <div id="js-making" class="frame__container is-hidden">
+          <div class="frame__headline">
             <p class="txt-xl txt-light-accent">MAKING</p>
           </div>
           <div class="frame__list">
@@ -113,18 +127,20 @@
               <li><a href="#" class="list__item">メイキング動画</a></li>
               <li><a href="#" class="list__item">メイキング画像</a></li>
             </ul>
-          </div> -->
-          <!-- /04 -->
-          <!-- 05 -->
-          <!-- <div class="frame__box">
+          </div>
+        </div>
+        <!-- /04 -->
+        <!-- 05 -->
+        <div id="js-finish" class="frame__container is-hidden">
+          <div class="frame__box">
             <div class="box">
               <div class="box__container">
                 <img src="img/title.png" width="228" height="92" alt="全社員早押上司争奪戦">
               </div>
             </div>
-          </div> -->
-          <!-- /05 -->
+          </div>
         </div>
+        <!-- /05 -->
       </div>
     </div>
     <!-- 01,04,05 -->
@@ -135,18 +151,15 @@
       <div class="frame__next">NEXT</div>
       <div class="frame__bone">
         <div class="frame__container">
-          <!-- 02 -->
-          <!-- <img src="img/member.jpg" alt="構成員" width="560" height="420"> -->
-          <!-- 02 -->
-          <!-- 03 -->
-          <div class="frame__slide">
-            <script async class="speakerdeck-embed" data-id="93603d04a886432ab0ece708e7a2bde2" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
-          </div>
-          <!-- /03 -->
         </div>
       </div>
     </div>
     <!-- /02,03 -->
   </div>
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+  integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
+  crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

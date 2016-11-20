@@ -25,4 +25,5 @@
 /*
  * utility - helperなど
  */
+@import "utility/is";
 @import "utility/txt";

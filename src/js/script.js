@@ -1,0 +1,21 @@
+import Common from './module/Common';
+
+(function() {
+  const elObj = {
+    frame: $('#js-frame'),
+    button: $('#js-button'),
+    intro: $('#js-intro'),
+    member: $('#js-member'),
+    back: $('#js-back'),
+    next: $('#js-next'),
+    slide: $('#js-slide'),
+    making: $('#js-making'),
+    finish: $('#js-finish')
+  };
+
+  const common = new Common(elObj);
+
+  common.init();
+
+})();
+

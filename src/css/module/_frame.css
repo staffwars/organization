@@ -10,6 +10,7 @@
   margin: auto;
   &--s {
     width: 870px;
+    transition: all 1s ease;
     .frame__bone {
       width: 494px;
     }
@@ -19,6 +20,7 @@
   }
   &--l {
     width: 1160px;
+    transition: all 1s ease;
     .frame__bone {
       width: 784px;
     }
@@ -29,25 +31,25 @@
   &::before {
     display: block;
     content: "";
-    background: url('../img/frame-staff.png') no-repeat;
-    width: 155px;
-    height: 15px;
+    background: url('../img/frame-left.png') no-repeat;
+    width: 253px;
+    height: 489px;
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 0;
+    left: -11px;
     margin: auto;
   }
   &::after {
     display: block;
     content: "";
-    background: url('../img/frame-wars.png') no-repeat;
-    width: 128px;
-    height: 15px;
+    background: url('../img/frame-right.png') no-repeat;
+    width: 231px;
+    height: 489px;
     position: absolute;
     top: 0;
     bottom: 0;
-    right: 0;
+    right: 11px;
     margin: auto;
   }
   &__back {
@@ -83,8 +85,8 @@
     }
   }
   &__bone {
-    background: url('../img/frame-left.png') left no-repeat,
-      url('../img/frame-right.png') right no-repeat;
+    /*background: url('../img/frame-left.png') left no-repeat,
+      url('../img/frame-right.png') right no-repeat;*/
     height: 489px;
     margin: 0 auto;
   }

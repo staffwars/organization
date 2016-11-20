@@ -25,3 +25,8 @@ a {
   color: $color-default;
   text-decoration: none;
 }
+
+button {
+  appearance: none;
+  outline: none;
+}
