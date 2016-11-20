@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+.list {
+  &__item {
+    background-color: rgba(0, 255, 255, .4);
+    width: 400px;
+    height: 120px;
+    margin: 20px 0;
+    font−size: $font-size-l;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

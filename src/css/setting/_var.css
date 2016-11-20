@@ -15,6 +15,7 @@ $font-size-xl: 2.14286rem; /* 30px */
 $color-default: #fff;
 $color-primary: #0ff;
 $color-accent: #ff0;
+$color-light-accent: #ffff64;
 
 /* bgcolor */
 $bgcolor-default: #000;
