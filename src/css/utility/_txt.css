@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+/* font-size */
+.txt-s { /* 13px */
+  font-size: $font-size-s;
+}
+.txt-xl { /* 30px */
+  font-size: $font-size-xl;
+}
+
+/* line-height */
+.txt-height-l {
+  line-height: $line-height-l;
+}
+
+/* color */
+.txt-light-accent {
+  color: $color-light-accent;
+}

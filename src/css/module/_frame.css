@@ -1,0 +1,422 @@
+@charset "utf-8";
+
+.frame {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  &--s {
+    transition: all 1s ease;
+  }
+  &--l {
+    transition: all 1s ease;
+  }
+  &::before {
+    display: block;
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  &::after {
+    display: block;
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  &__back {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    color: $color-primary;
+    font-size: $font-size-xs;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 1;
+    &::after {
+      display: block;
+      content: "";
+    }
+  }
+  &__next {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    color: $color-primary;
+    font-size: $font-size-xs;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 1;
+    &::before {
+      display: block;
+      content: "";
+    }
+  }
+  &__logoBody {
+    margin: 0 auto;
+    > img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__bone {
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  &__container {
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  &__logo {
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  &__headline {
+    position: absolute;
+    width: 100%;
+    line-height: 1;
+    text-align: center;
+  }
+  &__list {
+    position: absolute;
+    width: 100%;
+  }
+  &__box {
+    position: absolute;
+    width: 100%;
+  }
+  &__button {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  &__member {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    > img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__slide {
+    margin: 0 auto;
+  }
+}
+
+
+/* 大きめPC */
+@media screen and (min-width: 1200px) {
+  .frame {
+    height: 489px;
+    &--s {
+      width: 870px;
+      .frame__bone {
+        width: 494px;
+      }
+      .frame__container {
+        width: 400px;
+      }
+    }
+    &--l {
+      width: 1160px;
+      .frame__bone {
+        width: 784px;
+      }
+      .frame__container {
+        width: 560px;
+      }
+    }
+    &::before {
+      background: url('../img/frame-left.png') no-repeat;
+      width: 253px;
+      left: -11px;
+    }
+    &::after {
+      background: url('../img/frame-right.png') no-repeat;
+      width: 231px;
+      right: 11px;
+    }
+    &__back {
+      top: -33px;
+      width: 35px;
+      &::after {
+        @mixin sprite $back;
+        margin: 12px auto 0;
+      }
+    }
+    &__next {
+      bottom: -35px;
+      width: 35px;
+      &::before {
+        @mixin sprite $next;
+        margin: 0 auto 9px;
+      }
+    }
+    &__logoBody {
+      width: 333px;
+      height: 20px;
+    }
+    &__headline {
+      top: 61px;
+    }
+    &__list {
+      top: 125px;
+    }
+    &__box {
+      top: 58px;
+    }
+    &__member {
+      width: 560px;
+      height: 420px;
+    }
+    &__slide {
+      width: 510px;
+      height: 420px;
+    }
+  }
+}
+
+/* PC */
+@media screen and (min-width: 960px) and (max-width: 1119px) {
+  .frame {
+    height: 489px;
+    &--s {
+      width: 494px;
+      .frame__bone {
+        width: 494px;
+      }
+      .frame__container {
+        width: 400px;
+      }
+    }
+    &--l {
+      width: 784px;
+      .frame__bone {
+        width: 784px;
+      }
+      .frame__container {
+        width: 560px;
+      }
+    }
+    &::before {
+      background: url('../img/frame-left-simple.png') no-repeat;
+      width: 54px;
+      left: 0;
+    }
+    &::after {
+      background: url('../img/frame-right-simple.png') no-repeat;
+      width: 54px;
+      right: 0;
+    }
+    &__back {
+      top: -33px;
+      width: 35px;
+      &::after {
+        @mixin sprite $back;
+        margin: 12px auto 0;
+      }
+    }
+    &__next {
+      bottom: -35px;
+      width: 35px;
+      &::before {
+        @mixin sprite $next;
+        margin: 0 auto 9px;
+      }
+    }
+    &__logoBody {
+      width: 333px;
+      height: 20px;
+    }
+    &__headline {
+      top: 61px;
+    }
+    &__list {
+      top: 125px;
+    }
+    &__box {
+      top: 58px;
+    }
+    &__member {
+      width: 560px;
+      height: 420px;
+    }
+    &__slide {
+      width: 510px;
+      height: 420px;
+    }
+  }
+}
+
+/* TB */
+@media only screen and (min-width: 668px) and (max-width: 959px) {
+  .frame {
+    height: 489px;
+    &--s {
+      width: 494px;
+      .frame__bone {
+        width: 494px;
+      }
+      .frame__container {
+        width: 400px;
+      }
+    }
+    &--l {
+      width: 600px;
+      .frame__bone {
+        width: 600px;
+      }
+      .frame__container {
+        width: 510px;
+      }
+    }
+    &::before {
+      background: url('../img/frame-left-simple.png') no-repeat;
+      width: 54px;
+      left: 0;
+    }
+    &::after {
+      background: url('../img/frame-right-simple.png') no-repeat;
+      width: 54px;
+      right: 0;
+    }
+    &__back {
+      top: -33px;
+      width: 35px;
+      &::after {
+        @mixin sprite $back;
+        margin: 12px auto 0;
+      }
+    }
+    &__next {
+      bottom: -35px;
+      width: 35px;
+      &::before {
+        @mixin sprite $next;
+        margin: 0 auto 9px;
+      }
+    }
+    &__logoBody {
+      width: 333px;
+      height: 20px;
+      margin: 0 auto;
+      > img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &__headline {
+      top: 61px;
+    }
+    &__list {
+      top: 125px;
+    }
+    &__box {
+      top: 58px;
+    }
+    &__member {
+      width: 510px;
+      height: 382.5px;
+    }
+    &__slide {
+      width: 510px;
+      height: 420px;
+    }
+  }
+}
+
+/* SP */
+@media screen and (max-width: 667px) {
+  .frame {
+    height: 244px;
+    &--s {
+      width: 247px;
+      .frame__bone {
+        width: 247px;
+      }
+      .frame__container {
+        width: 200px;
+      }
+    }
+    &--l {
+      width: 320px;
+      .frame__bone {
+        width: 320px;
+      }
+      .frame__container {
+        width: 280px;
+      }
+    }
+    &::before {
+      background: url('../img/frame-left-simple.png') no-repeat;
+      background-size: 27px 244px;
+      width: 27px;
+      left: 0;
+    }
+    &::after {
+      background: url('../img/frame-right-simple.png') no-repeat;
+      background-size: 27px 244px;
+      width: 27px;
+      right: 0;
+    }
+
+    &__back {
+      top: -33px;
+      width: 35px;
+      &::after {
+        @mixin r-sprite $back;
+        margin: 12px auto 0;
+      }
+    }
+    &__next {
+      bottom: -35px;
+      width: 35px;
+      &::before {
+        @mixin r-sprite $next;
+        margin: 0 auto 9px;
+      }
+    }
+    &__logoBody {
+      width: 166px;
+      height: 10px;
+    }
+    &__headline {
+      top: 30px;
+    }
+    &__list {
+      top: 62px;
+    }
+    &__box {
+      top: 29px;
+    }
+    &__member {
+      width: 280px;
+      height: 210px;
+    }
+    &__slide {
+      width: 255px;
+      height: 210px;
+    }
+  }
+}

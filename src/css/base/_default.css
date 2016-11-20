@@ -22,6 +22,19 @@ img {
 }
 
 a {
-  color: $color-primary;
+  color: $color-default;
   text-decoration: none;
+}
+
+button {
+  appearance: none;
+  outline: none;
+}
+
+
+/* SP */
+@media screen and (max-width: 667px) {
+  html {
+    font-size: 10px;
+  }
 }

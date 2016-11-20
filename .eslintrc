@@ -128,7 +128,7 @@
       "after": true
     }],// カンマの前のスペースを許可せず、カンマのあとにスペースがないことを許可しない
     "comma-style": [1, "last"],// 改行後のカンマを許可しない
-    "indent": [1, 2],// インデントは2スペース以外を許可しない
+    "indent": [1, 2, {"SwitchCase": 1}],// インデントは2スペース以外を許可しない
     "key-spacing": [2, {
       "beforeColon": false,
       "afterColon": true

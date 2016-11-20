@@ -5,7 +5,7 @@
  */
 @import "setting/var";
 @import "setting/mixin";
-/*@import "setting/sprite";*/
+@import "setting/sprite";
 
 /*
  * base - リセット・デフォルトスタイル定義
@@ -17,7 +17,13 @@
  * module - BEMのBlock単位のmodule
  */
 @import "module/bg";
+@import "module/box";
+@import "module/button";
+@import "module/frame";
+@import "module/list";
 
 /*
  * utility - helperなど
  */
+@import "utility/is";
+@import "utility/txt";
