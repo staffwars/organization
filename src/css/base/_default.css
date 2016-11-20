@@ -30,3 +30,11 @@ button {
   appearance: none;
   outline: none;
 }
+
+
+/* SP */
+@media screen and (max-width: 667px) {
+  html {
+    font-size: 10px;
+  }
+}

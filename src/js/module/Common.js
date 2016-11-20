@@ -6,7 +6,7 @@ export default class Common {
       _this[`$${key}`] = this[key];
     }, elObj);
 
-    this.frameBoneHeight = this.$frameBone.height();
+    this.getFrameBoneHeight();
 
     this.pageNum = 1;
   }
@@ -16,6 +16,10 @@ export default class Common {
     this.addClickButtonEvent();
     this.addClickBackEvent();
     this.addClickNextEvent();
+  }
+
+  getFrameBoneHeight() {
+    this.frameBoneHeight = this.$frameBone.height();
   }
 
   setPage() {
@@ -59,10 +63,19 @@ export default class Common {
   }
 
   setSlideSize() {
-    $('.speakerdeck-iframe').css({
-      width: '470px',
-      height: '414.5px'
-    });
+    const $iframe = $('.speakerdeck-iframe');
+
+    if (this.frameBoneHeight === 244) {
+      $iframe.css({
+        width: '240px',
+        height: '212px'
+      });
+    } else {
+      $iframe.css({
+        width: '470px',
+        height: '414.5px'
+      });
+    }
   }
 
   scrollToBack() {
@@ -75,6 +88,12 @@ export default class Common {
     this.$frameBone.animate({
       scrollTop: this.$frameBone.scrollTop() + this.frameBoneHeight
     }, 800);
+  }
+
+  addResizeEvent() {
+    $(window).on('resize', () => {
+      this.getFrameBoneHeight();
+    });
   }
 
   addClickBackEvent() {
@@ -148,28 +167,24 @@ export default class Common {
     this.hiddenEl(this.$finish);
   }
 
-  // frameサイズS
   compressFrame() {
     this.$frame
       .removeClass('frame--l')
       .addClass('frame--s');
   }
 
-  // frameサイズL
   expandFrame() {
     this.$frame
       .removeClass('frame--s')
       .addClass('frame--l');
   }
 
-  // 要素をフェードイン
   fadeInEl($el) {
     $el
       .removeClass('is-hidden isfadeIn')
       .addClass('is-fadeIn');
   }
 
-  // 要素を非表示
   hiddenEl($el) {
     $el.addClass('is-hidden');
   }

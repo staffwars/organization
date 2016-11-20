@@ -1,7 +1,6 @@
 @charset "utf-8";
 
 .frame {
-  height: 489px;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -9,55 +8,33 @@
   right: 0;
   margin: auto;
   &--s {
-    width: 870px;
     transition: all 1s ease;
-    .frame__bone {
-      width: 494px;
-    }
-    .frame__container {
-      width: 400px;
-    }
   }
   &--l {
-    width: 1160px;
     transition: all 1s ease;
-    .frame__bone {
-      width: 784px;
-    }
-    .frame__container {
-      width: 560px;
-    }
   }
   &::before {
     display: block;
     content: "";
-    background: url('../img/frame-left.png') no-repeat;
-    width: 253px;
-    height: 489px;
+    height: 100%;
     position: absolute;
     top: 0;
     bottom: 0;
-    left: -11px;
     margin: auto;
   }
   &::after {
     display: block;
     content: "";
-    background: url('../img/frame-right.png') no-repeat;
-    width: 231px;
-    height: 489px;
+    height: 100%;
     position: absolute;
     top: 0;
     bottom: 0;
-    right: 11px;
     margin: auto;
   }
   &__back {
     position: absolute;
-    top: -33px;
     left: 0;
     right: 0;
-    width: 35px;
     margin: auto;
     text-align: center;
     color: $color-primary;
@@ -66,18 +43,14 @@
     cursor: pointer;
     z-index: 1;
     &::after {
-      @mixin sprite $back;
       display: block;
       content: "";
-      margin: 12px auto 0;
     }
   }
   &__next {
     position: absolute;
-    bottom: -35px;
     left: 0;
     right: 0;
-    width: 35px;
     margin: auto;
     text-align: center;
     color: $color-primary;
@@ -86,19 +59,24 @@
     cursor: pointer;
     z-index: 1;
     &::before {
-      @mixin sprite $next;
       display: block;
       content: "";
-      margin: 0 auto 9px;
+    }
+  }
+  &__logoBody {
+    margin: 0 auto;
+    > img {
+      width: 100%;
+      height: 100%;
     }
   }
   &__bone {
-    height: 489px;
+    height: 100%;
     margin: 0 auto;
     overflow: hidden;
   }
   &__container {
-    height: 489px;
+    height: 100%;
     margin: 0 auto;
     position: relative;
     display: flex;
@@ -110,23 +88,19 @@
     position: absolute;
     top: 0;
     width: 100%;
-    text-align: center;
   }
   &__headline {
     position: absolute;
-    top: 61px;
     width: 100%;
     line-height: 1;
     text-align: center;
   }
   &__list {
     position: absolute;
-    top: 125px;
     width: 100%;
   }
   &__box {
     position: absolute;
-    top: 58px;
     width: 100%;
   }
   &__button {
@@ -134,8 +108,306 @@
     bottom: 0;
     width: 100%;
   }
-  &__slide {
-    width: 470px;
+  &__img {
     margin: 0 auto;
+    > img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__slide {
+    margin: 0 auto;
+  }
+}
+
+
+/* 大きめPC */
+@media screen and (min-width: 1200px) {
+  .frame {
+    height: 489px;
+    &--s {
+      width: 870px;
+      .frame__bone {
+        width: 494px;
+      }
+      .frame__container {
+        width: 400px;
+      }
+    }
+    &--l {
+      width: 1160px;
+      .frame__bone {
+        width: 784px;
+      }
+      .frame__container {
+        width: 560px;
+      }
+    }
+    &::before {
+      background: url('../img/frame-left.png') no-repeat;
+      width: 253px;
+      left: -11px;
+    }
+    &::after {
+      background: url('../img/frame-right.png') no-repeat;
+      width: 231px;
+      right: 11px;
+    }
+    &__back {
+      top: -33px;
+      width: 35px;
+      &::after {
+        @mixin sprite $back;
+        margin: 12px auto 0;
+      }
+    }
+    &__next {
+      bottom: -35px;
+      width: 35px;
+      &::before {
+        @mixin sprite $next;
+        margin: 0 auto 9px;
+      }
+    }
+    &__logoBody {
+      width: 333px;
+      height: 20px;
+    }
+    &__headline {
+      top: 61px;
+    }
+    &__list {
+      top: 125px;
+    }
+    &__box {
+      top: 58px;
+    }
+    &__img {
+      width: 560px;
+      height: 420px;
+    }
+    &__slide {
+      width: 470px;
+    }
+  }
+}
+
+/* PC */
+@media screen and (min-width: 960px) and (max-width: 1119px) {
+  .frame {
+    height: 489px;
+    &--s {
+      width: 494px;
+      .frame__bone {
+        width: 494px;
+      }
+      .frame__container {
+        width: 400px;
+      }
+    }
+    &--l {
+      width: 784px;
+      .frame__bone {
+        width: 784px;
+      }
+      .frame__container {
+        width: 560px;
+      }
+    }
+    &::before {
+      background: url('../img/frame-left-simple.png') no-repeat;
+      width: 54px;
+      left: 0;
+    }
+    &::after {
+      background: url('../img/frame-right-simple.png') no-repeat;
+      width: 54px;
+      right: 0;
+    }
+    &__back {
+      top: -33px;
+      width: 35px;
+      &::after {
+        @mixin sprite $back;
+        margin: 12px auto 0;
+      }
+    }
+    &__next {
+      bottom: -35px;
+      width: 35px;
+      &::before {
+        @mixin sprite $next;
+        margin: 0 auto 9px;
+      }
+    }
+    &__logoBody {
+      width: 333px;
+      height: 20px;
+    }
+    &__headline {
+      top: 61px;
+    }
+    &__list {
+      top: 125px;
+    }
+    &__box {
+      top: 58px;
+    }
+    &__img {
+      width: 560px;
+      height: 420px;
+    }
+    &__slide {
+      width: 470px;
+    }
+  }
+}
+
+/* TB */
+@media only screen and (min-width: 668px) and (max-width: 959px) {
+  .frame {
+    height: 489px;
+    &--s {
+      width: 494px;
+      .frame__bone {
+        width: 494px;
+      }
+      .frame__container {
+        width: 400px;
+      }
+    }
+    &--l {
+      width: 600px;
+      .frame__bone {
+        width: 600px;
+      }
+      .frame__container {
+        width: 470px;
+      }
+    }
+    &::before {
+      background: url('../img/frame-left-simple.png') no-repeat;
+      width: 54px;
+      left: 0;
+    }
+    &::after {
+      background: url('../img/frame-right-simple.png') no-repeat;
+      width: 54px;
+      right: 0;
+    }
+    &__back {
+      top: -33px;
+      width: 35px;
+      &::after {
+        @mixin sprite $back;
+        margin: 12px auto 0;
+      }
+    }
+    &__next {
+      bottom: -35px;
+      width: 35px;
+      &::before {
+        @mixin sprite $next;
+        margin: 0 auto 9px;
+      }
+    }
+    &__logoBody {
+      width: 333px;
+      height: 20px;
+      margin: 0 auto;
+      > img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &__headline {
+      top: 61px;
+    }
+    &__list {
+      top: 125px;
+    }
+    &__box {
+      top: 58px;
+    }
+    &__img {
+      width: 470px;
+    }
+    &__slide {
+      width: 470px;
+    }
+  }
+}
+
+/* SP */
+@media screen and (max-width: 667px) {
+  .frame {
+    height: 244px;
+    &--s {
+      width: 247px;
+      .frame__bone {
+        width: 247px;
+      }
+      .frame__container {
+        width: 200px;
+      }
+    }
+    &--l {
+      width: 320px;
+      .frame__bone {
+        width: 320px;
+      }
+      .frame__container {
+        width: 280px;
+      }
+    }
+    &::before {
+      background: url('../img/frame-left-simple.png') no-repeat;
+      background-size: 27px 244px;
+      width: 27px;
+      left: 0;
+    }
+    &::after {
+      background: url('../img/frame-right-simple.png') no-repeat;
+      background-size: 27px 244px;
+      width: 27px;
+      right: 0;
+    }
+
+    &__back {
+      top: -33px;
+      width: 35px;
+      &::after {
+        @mixin r-sprite $back;
+        margin: 12px auto 0;
+      }
+    }
+    &__next {
+      bottom: -35px;
+      width: 35px;
+      &::before {
+        @mixin r-sprite $next;
+        margin: 0 auto 9px;
+      }
+    }
+    &__logoBody {
+      width: 166px;
+      height: 10px;
+    }
+    &__headline {
+      top: 30px;
+    }
+    &__list {
+      top: 62px;
+    }
+    &__box {
+      top: 29px;
+    }
+    &__img {
+      width: 280px;
+      height: 210px;
+    }
+    &__slide {
+      width: 240px;
+    }
   }
 }

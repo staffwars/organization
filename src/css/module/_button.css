@@ -79,24 +79,8 @@
       @mixin sprite $arrow-right-accent;
     }
   }
-  &--primary {
-    .button__body {
-      background-color: $color-primary;
-      &::before{
-        border-right-color: $color-primary;
-      }
-      &::after{
-        border-left-color: $color-primary;
-      }
-    }
-    .button__left {
-      @mixin sprite $arrow-left-primary;
-    }
-    .button__right {
-      @mixin sprite $arrow-right-primary;
-    }
-  }
 }
+
 
 @keyframes button1 {
   0% {
@@ -113,5 +97,44 @@
   }
   100% {
     opacity: .2
+  }
+}
+
+
+/* SP */
+@media screen and (max-width: 667px) {
+  .button {
+    width: 185px;
+    height: 28px;
+    &__left {
+      &--1 {
+        left: 16px;
+      }
+    }
+    &__right {
+      &--1 {
+        right: 16px;
+      }
+    }
+    &__body {
+      width: 92px;
+      &::before, &::after {
+        border: solid 14px transparent;
+      }
+      &::before {
+        border-right: solid 14px;
+        left: -28px;
+      }
+      &::after {
+        border-left: solid 14px;
+        right: -28px;
+      }
+    }
+    .button__left {
+      @mixin r-sprite $arrow-left-accent;
+    }
+    .button__right {
+      @mixin r-sprite $arrow-right-accent;
+    }
   }
 }
