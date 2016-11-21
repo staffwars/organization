@@ -55,18 +55,34 @@ export default class Common {
       // スライド画面
       case 3:
         this.expandFrame();
+        setTimeout(() => {
+          this.fadeInEl(this.$back);
+          this.fadeInEl(this.$next);
+        }, 1000);
         break;
       // YouTube画面
       case 4:
         this.expandFrame();
+        setTimeout(() => {
+          this.fadeInEl(this.$back);
+          this.fadeInEl(this.$next);
+        }, 1000);
         break;
       // メイキング画面
       case 5:
         this.compressFrame();
+        setTimeout(() => {
+          this.fadeInEl(this.$back);
+          this.fadeInEl(this.$next);
+        }, 1000);
         break;
       // 終了画面
       case 6:
         this.$next.text('TOP');
+        setTimeout(() => {
+          this.fadeInEl(this.$back);
+          this.fadeInEl(this.$next);
+        }, 1000);
         break;
       default:
     }
@@ -92,6 +108,9 @@ export default class Common {
 
   addClickBackEvent() {
     this.$back.on('click', () => {
+      this.hiddenEl(this.$back);
+      this.hiddenEl(this.$next);
+
       this.pageNum = this.pageNum - 1;
 
       if (this.pageNum !== 1) {
@@ -104,6 +123,9 @@ export default class Common {
 
   addClickNextEvent() {
     this.$next.on('click', () => {
+      this.hiddenEl(this.$back);
+      this.hiddenEl(this.$next);
+
       if (this.pageNum === 5) {
         this.pageNum = 1;
       } else {
