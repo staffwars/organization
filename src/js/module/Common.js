@@ -114,7 +114,7 @@ export default class Common {
       // メイキング画面
       case 5:
         this.hiddenIntroPage();
-        this.compressFrame();
+        this.expandFrame();
         this.showMemberPage();
         this.showSlidePage();
         this.showMoviePage();

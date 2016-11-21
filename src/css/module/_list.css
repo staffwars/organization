@@ -3,7 +3,7 @@
 .list {
   &__item {
     background-color: rgba(0, 255, 255, .4);
-    width: 400px;
+    width: 560px;
     height: 120px;
     margin: 20px auto;
     font−size: $font-size-l;
@@ -13,10 +13,20 @@
   }
 }
 
+/* TB */
+@media only screen and (min-width: 668px) and (max-width: 959px) {
+  .list {
+    &__item {
+      width: 510px;
+    }
+  }
+}
+
+/* SP */
 @media screen and (max-width: 667px) {
   .list {
     &__item {
-      width: 200px;
+      width: 280px;
       height: 60px;
       margin: 10px auto;
     }
