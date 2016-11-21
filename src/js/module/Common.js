@@ -25,9 +25,11 @@ export default class Common {
 
   setPage() {
     switch (this.pageNum) {
+      // 説明画面
       case 1:
         this.hiddenMemberPage();
         this.hiddenSlidePage();
+        this.hiddenMoviePage();
         this.hiddenMakingPage();
         this.hiddenFinishPage();
         this.compressFrame();
@@ -35,11 +37,13 @@ export default class Common {
         this.hiddenEl(this.$back);
         this.hiddenEl(this.$next);
         break;
+      // メンバー画面
       case 2:
         this.hiddenIntroPage();
         this.expandFrame();
         this.showMemberPage();
         this.showSlidePage();
+        this.showMoviePage();
         this.showMakingPage();
         this.showFinishPage();
         this.$next.text('NEXT');
@@ -48,13 +52,20 @@ export default class Common {
           this.fadeInEl(this.$next);
         }, 1000);
         break;
+      // スライド画面
       case 3:
         this.expandFrame();
         break;
+      // YouTube画面
       case 4:
+        this.expandFrame();
+        break;
+      // メイキング画面
+      case 5:
         this.compressFrame();
         break;
-      case 5:
+      // 終了画面
+      case 6:
         this.$next.text('TOP');
         break;
       default:
@@ -132,6 +143,14 @@ export default class Common {
 
   hiddenSlidePage() {
     this.hiddenEl(this.$slide);
+  }
+
+  showMoviePage() {
+    this.fadeInEl(this.$movie);
+  }
+
+  hiddenMoviePage() {
+    this.hiddenEl(this.$movie);
   }
 
   showMakingPage() {

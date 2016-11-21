@@ -9,6 +9,7 @@ import Common from './module/Common';
     back: $('#js-back'),
     next: $('#js-next'),
     slide: $('#js-slide'),
+    movie: $('#js-movie'),
     making: $('#js-making'),
     finish: $('#js-finish'),
     frameBone: $('#js-frame-bone')
