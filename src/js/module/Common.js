@@ -7,16 +7,45 @@ export default class Common {
     }, elObj);
 
     this.getFrameBoneHeight();
-
-    this.pageNum = 1;
   }
 
   init() {
+    this.setPageNum();
     this.setPage();
+    this.scrollToCurrentPage();
     this.addResizeEvent();
     this.addClickButtonEvent();
     this.addClickBackEvent();
     this.addClickNextEvent();
+  }
+
+  setPageNum() {
+    const hash = this.getHash();
+
+    if (hash) {
+      this.pageNum = hash;
+    } else {
+      this.pageNum = 1;
+    }
+  }
+
+  getHash() {
+    const hash = location.hash;
+
+    if (hash) {
+      return Number(location.hash.split('#')[1]);
+    }
+    return null;
+  }
+
+  setHash(value) {
+    location.hash = value;
+  }
+
+  scrollToCurrentPage() {
+    if (this.pageNum !== 1) {
+      this.$frameBone.scrollTop(this.frameBoneHeight * (this.pageNum - 2));
+    }
   }
 
   getFrameBoneHeight() {
@@ -24,6 +53,8 @@ export default class Common {
   }
 
   setPage() {
+    this.setHash(this.pageNum);
+
     switch (this.pageNum) {
       // 説明画面
       case 1:
@@ -54,7 +85,13 @@ export default class Common {
         break;
       // スライド画面
       case 3:
+        this.hiddenIntroPage();
         this.expandFrame();
+        this.showMemberPage();
+        this.showSlidePage();
+        this.showMoviePage();
+        this.showMakingPage();
+        this.showFinishPage();
         setTimeout(() => {
           this.fadeInEl(this.$back);
           this.fadeInEl(this.$next);
@@ -62,7 +99,13 @@ export default class Common {
         break;
       // YouTube画面
       case 4:
+        this.hiddenIntroPage();
         this.expandFrame();
+        this.showMemberPage();
+        this.showSlidePage();
+        this.showMoviePage();
+        this.showMakingPage();
+        this.showFinishPage();
         setTimeout(() => {
           this.fadeInEl(this.$back);
           this.fadeInEl(this.$next);
@@ -70,7 +113,13 @@ export default class Common {
         break;
       // メイキング画面
       case 5:
+        this.hiddenIntroPage();
         this.compressFrame();
+        this.showMemberPage();
+        this.showSlidePage();
+        this.showMoviePage();
+        this.showMakingPage();
+        this.showFinishPage();
         setTimeout(() => {
           this.fadeInEl(this.$back);
           this.fadeInEl(this.$next);
@@ -78,13 +127,31 @@ export default class Common {
         break;
       // 終了画面
       case 6:
+        this.hiddenIntroPage();
+        this.compressFrame();
+        this.showMemberPage();
+        this.showSlidePage();
+        this.showMoviePage();
+        this.showMakingPage();
+        this.showFinishPage();
         this.$next.text('TOP');
         setTimeout(() => {
           this.fadeInEl(this.$back);
           this.fadeInEl(this.$next);
         }, 1000);
         break;
+      // case 1と同じ
       default:
+        this.hiddenMemberPage();
+        this.hiddenSlidePage();
+        this.hiddenMoviePage();
+        this.hiddenMakingPage();
+        this.hiddenFinishPage();
+        this.compressFrame();
+        this.showIntroPage();
+        this.hiddenEl(this.$back);
+        this.hiddenEl(this.$next);
+        break;
     }
   }
 
