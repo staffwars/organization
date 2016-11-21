@@ -193,7 +193,7 @@ export default class Common {
       this.hiddenEl(this.$back);
       this.hiddenEl(this.$next);
 
-      if (this.pageNum === 5) {
+      if (this.pageNum === 6) {
         this.pageNum = 1;
       } else {
         this.pageNum = this.pageNum + 1;
