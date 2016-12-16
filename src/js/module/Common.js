@@ -55,6 +55,8 @@ export default class Common {
   setPage() {
     if (this.pageNum !== 1) {
       this.setHash(this.pageNum);
+    } else {
+      this.setHash('');
     }
 
     switch (this.pageNum) {
